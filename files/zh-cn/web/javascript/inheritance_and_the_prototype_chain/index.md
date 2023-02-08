@@ -235,11 +235,11 @@ doSomething.prototype.foo:  bar
 ```js
 var o = {a: 1};
 
-// o 这个对象继承了 Object.prototype 上面的所有属性
-// o 自身没有名为 hasOwnProperty 的属性
-// hasOwnProperty 是 Object.prototype 的属性
-// 因此 o 继承了 Object.prototype 的 hasOwnProperty
-// Object.prototype 的原型为 null
+// 1. 只要是对象，就继承Object.prototype. 因此 o 这个对象继承了 Object.prototype 上面的所有属性以及方法
+// 2. 在这里，我们仅仅在o上创建了一个属性a ,所以 o 自身没有名为 hasOwnProperty 的方法
+// 3. hasOwnProperty 是 Object.prototype 上的一个方法
+// 4. 因此 o 继承了 Object.prototype 的 hasOwnProperty 方法
+// 5. Object.prototype 的原型为 null
 // 原型链如下：
 // o ---> Object.prototype ---> null
 
